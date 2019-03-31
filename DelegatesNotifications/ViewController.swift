@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
-    let myLabel:UILabel = {
+    lazy var myLabel:UILabel = {
          let label = UILabel(frame: CGRect(x: 10, y: 140, width: 300, height: 40))
         label.text = "Lazy"
         label.backgroundColor = .yellow
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        view.addSubview(myLabel)
+        view.addSubview(myLabel)
 
         NotificationCenter.default.addObserver(self, selector: #selector(handle(notification:)), name: name, object: nil)
 
